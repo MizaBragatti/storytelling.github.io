@@ -105,6 +105,6 @@ footer {
     letter-spacing: 0.5px;
 }
 
-p.itau {
+p.itau, p.fiap, p.yaman, p.adolescente {
     text-align: justify;
 }
