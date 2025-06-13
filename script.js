@@ -1,5 +1,5 @@
 function calcularIdade() {
-    const nascimento = new Date(1988, 6, 7); // Julho é mês 6 (zero-based)
+    const nascimento = new Date(1988, 6, 7); // Julho é 6 (zero-based)
     const hoje = new Date();
     let anos = hoje.getFullYear() - nascimento.getFullYear();
     let meses = hoje.getMonth() - nascimento.getMonth();
@@ -15,10 +15,20 @@ function calcularIdade() {
         meses += 12;
     }
 
-    return `Tenho ${anos} ano(s), ${meses} mês(es) e ${dias} dia(s).`;
+    return { anos, meses, dias };
 }
 
-document.getElementById('minha-idade').textContent = calcularIdade();
+function mostrarIdade() {
+    const idade = calcularIdade();
+    document.getElementById('minha-idade').textContent =
+        `Tenho ${idade.anos} ano(s), ${idade.meses} mês(es) e ${idade.dias} dia(s).`;
+
+    const faltamAnos = 120 - idade.anos - (idade.meses > 0 || idade.dias > 0 ? 1 : 0);
+    document.getElementById('falta-idade').textContent =
+        `Faltam aproximadamente ${faltamAnos < 0 ? 0 : faltamAnos} ano(s) para atingir 120 anos (limite humano).`;
+}
+
+mostrarIdade();
 
 function calcularTempoCasado() {
     const dataCasamento = new Date(2016, 10, 26); // Mês começa em 0 (Janeiro)
@@ -42,3 +52,11 @@ function calcularTempoCasado() {
 }
 
 document.getElementById('tempo-casado').textContent = calcularTempoCasado();
+
+function abrirPopup() {
+    document.getElementById("popup").style.display = "block";
+}
+
+function fecharPopup() {
+    document.getElementById("popup").style.display = "none";
+}

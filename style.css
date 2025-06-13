@@ -65,14 +65,17 @@ footer {
 }
 
 /* Skills */
-.skills-container {
+.skills-container,
+.instrumentos-container {
     display: flex;
     flex-wrap: wrap;
     gap: 28px;
     justify-content: center;
     margin-top: 20px;
 }
-.skill {
+
+.skill,
+.instrumento {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,11 +87,15 @@ footer {
     padding: 12px 6px 8px 6px;
     transition: box-shadow 0.2s, transform 0.2s;
 }
-.skill:hover {
+
+.skill:hover,
+.instrumento:hover {
     box-shadow: 0 4px 24px rgba(64, 98, 187, 0.18);
     transform: translateY(-4px) scale(1.04);
 }
-.skill img {
+
+.skill img,
+.instrumento img {
     margin-bottom: 8px;
     background: #e9edf5;
     border-radius: 8px;
@@ -96,7 +103,9 @@ footer {
     box-shadow: 0 2px 8px rgba(64, 98, 187, 0.07);
     height: 48px;
 }
-.skill p {
+
+.skill p,
+.instrumento p {
     margin: 0;
     font-size: 0.97em;
     text-align: center;
@@ -105,6 +114,40 @@ footer {
     letter-spacing: 0.5px;
 }
 
-p.itau, p.fiap, p.yaman, p.adolescente {
+p.itau,
+p.fiap,
+p.yaman,
+p.adolescente {
     text-align: justify;
+}
+
+/* Estilo do fundo escuro (overlay) */
+#popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Estilo da imagem no centro */
+#popup img {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: 5% auto;
+    box-shadow: 0 0 10px #fff;
+}
+
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    cursor: pointer;
 }
