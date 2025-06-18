@@ -53,8 +53,9 @@ function calcularTempoCasado() {
 
 document.getElementById('tempo-casado').textContent = calcularTempoCasado();
 
-function abrirPopup() {
+function abrirPopup(caminho) {
     document.getElementById("popup").style.display = "block";
+    document.querySelector("#popup img").src = caminho;
 }
 
 function fecharPopup() {
